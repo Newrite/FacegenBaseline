@@ -84,7 +84,7 @@ namespace FacegenBaseline
                     var origin = state.LinkCache.ResolveContext<INpc, INpcGetter>(baselineNPC.FormKey, Mutagen.Bethesda.Plugins.Cache.ResolveTarget.Origin);
                     var originHDPTs = origin.Record.HeadParts.Select(s => s.TryResolve<IHeadPartGetter>(state.LinkCache));
                     var winnerHDPTs = winner.Record.HeadParts.Select(s => s.TryResolve<IHeadPartGetter>(state.LinkCache));
-                    if (originHDPTs.SequenceEqual(winnerHDPTs))
+                    if (originHDPTs.SequenceEqual(winnerHDPTs) || settings.GetalwaysWinFlag)
                     {
                         Console.WriteLine("Baseline appearance used for {0}/{1:X8}", baselineNPC.Name, baselineNPC.FormKey.ID);
                         UseBaselineAppearance(baselineNPC, winner.Record);

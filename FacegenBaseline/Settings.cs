@@ -24,5 +24,12 @@ namespace FacegenBaseline
         [SynthesisDescription(_getProtectedFlagDescription)]
         // public string BaselineMod { get; set; } = "MyFacegenBaseline.esp";
         public bool GetProtectedFlag { get; set; } = true;
+        
+        const string _getAlwaysWinDescription = "Always win mods override from list.";
+        [SynthesisSettingName("Get always win mods from list.")]
+        [SynthesisTooltip(_getAlwaysWinDescription)]
+        [SynthesisDescription(_getAlwaysWinDescription)]
+        // public string BaselineMod { get; set; } = "MyFacegenBaseline.esp";
+        public bool GetalwaysWinFlag { get; set; } = true;
     }
 }
